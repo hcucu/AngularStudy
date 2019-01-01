@@ -1,0 +1,44 @@
+<p>{{ test }}</p>
+
+<div>
+  <label>Add user</label>
+  <form
+    [formGroup]="addUserForm"
+    (ngSubmit)="addUser()"
+    name="adduser"
+    class="user-form"
+  >
+    <mat-form-field class="form-field">
+      <input matInput placeholder="name" formControlName="username" />
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <mat-select placeholder="age" formControlName="age">
+        <mat-option *ngFor="let age of [18, 19, 20, 21, 22, 23, 24, 25]" [value]="age">
+          {{ age }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <input matInput placeholder="address" formControlName="address" />
+    </mat-form-field>
+
+    <button type="submit" color="primary">submit</button>
+  </form>
+</div>
+
+<mat-grid-list cols="1" rowHeight="150px" *ngFor="let user of users">
+  <mat-grid-tile>
+    <mat-card class="card">
+      <mat-card-title>{{ user.name }}</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+      <mat-card-header></mat-card-header>
+      <mat-card-content>
+        <p>age : {{ user.age }}</p>
+        <p>address : {{ user.address }}</p>
+      </mat-card-content>
+      <mat-card-footer></mat-card-footer>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
