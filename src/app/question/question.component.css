@@ -1,0 +1,22 @@
+.img {
+  width: 100%;
+  margin-bottom: 18%;
+}
+.card-question {
+  width: 500px;
+  margin-bottom: 2%;
+  background-color: lightgoldenrodyellow;
+}
+
+.radio-group {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.radio-button {
+  margin: 5px;
+}
+
+.selected-value {
+  margin: 15px 0;
+}

@@ -1,8 +1,20 @@
 <div *ngIf="messageService.messages.length">
-
-  <h2>Messages</h2>
-  <button class="clear"
-          (click)="messageService.clear()">clear</button>
-  <div *ngFor='let message of messageService.messages'> {{message}} </div>
-
+  <mat-label *ngFor="let message of messageService.messages">
+    {{ message }}<br/>
+  </mat-label>
+    <!-- matInput
+    cdkTextareaAutosize
+    #autosize="cdkTextareaAutosize"
+    cdkAutosizeMinRows="10"
+    cdkAutosizeMaxRows="10"
+    value
+  > -->
+  <!-- <h2>Messages</h2> -->
+  <!-- <div *ngFor="let message of messageService.messages">
+    {{ message }}
+ <mat-divider></mat-divider>
+  </div> -->
+  <!-- <mat-divider [vertical]="true"></mat-divider> -->
+  <!-- <button class="clear" (click)="messageService.clear()">clear</button> -->
+<!-- </textarea> -->
 </div>

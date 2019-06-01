@@ -1,0 +1,71 @@
+<p>
+{{data.questions | json}}
+</p>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- this.displayedColumns = ['english', 'chinese', 'userAnswer', 'isCorrect', "isNotSure", "lastTestTime"]; -->
+
+  <!-- {
+    "word": {
+      "lastTestTime": "2019-04-07T20:21:58.284Z",
+      "vocalbulary": {
+        "english": "chloramphenicol",
+        "chinese": " n.[药]氯霉素"
+      }
+    },
+    "options": [
+      { "id": 0, "text": " n.不认输,勇敢" },
+      { "id": 1, "text": " n.发给许可证" },
+      { "id": 2, "text": " n.谷壳,糠,愚弄v.戏弄,开玩笑" },
+      { "id": 3, "text": " n.[药]氯霉素" }
+    ],
+    "userAnswer": -1,
+    "isCorrect": false,
+    "isNotSure": false
+  } -->
+
+  <!-- English Column -->
+  <ng-container matColumnDef="english">
+    <th mat-header-cell *matHeaderCellDef> English </th>
+    <td mat-cell *matCellDef="let element"> {{element.word.vocalbulary.english}} </td>
+  </ng-container>
+
+  <!-- Chinese Column -->
+  <ng-container matColumnDef="chinese">
+    <th mat-header-cell *matHeaderCellDef> Chinese </th>
+    <td mat-cell *matCellDef="let element"> {{element.word.vocalbulary.english}} </td>
+  </ng-container>
+
+  <!-- userAnswer Column -->
+  <ng-container matColumnDef="userAnswer">
+    <th mat-header-cell *matHeaderCellDef> userAnswer </th>
+    <td mat-cell *matCellDef="let element"> {{element.userAnswer}} </td>
+  </ng-container>
+
+  <!-- isCorrect Column -->
+  <ng-container matColumnDef="isCorrect">
+    <th mat-header-cell *matHeaderCellDef> isCorrect </th>
+    <td mat-cell *matCellDef="let element"> {{element.isCorrect}} </td>
+  </ng-container>
+
+  <!-- isNotSure Column -->
+  <ng-container matColumnDef="isNotSure">
+    <th mat-header-cell *matHeaderCellDef> isNotSure </th>
+    <td mat-cell *matCellDef="let element"> {{element.isNotSure}} </td>
+  </ng-container>
+
+  <!-- lastTestTime Column -->
+  <ng-container matColumnDef="lastTestTime">
+    <th mat-header-cell *matHeaderCellDef> lastTestTime </th>
+    <td mat-cell *matCellDef="let element"> {{element.word.lastTestTime}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<button mat-raised-button color="primary" (click)="onClose()">Close</button>

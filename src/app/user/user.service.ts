@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { User } from "app/entity/user";
+import { User } from "./user";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { catchError, tap } from "rxjs/operators";
@@ -9,7 +9,7 @@ import { catchError, tap } from "rxjs/operators";
 })
 export class UserService {
   users: User[];
-  url =  "http://localhost:8081";
+  url = "http://localhost:8081";
   //  = [
   //   { name: 'cucu', age: 18, address: 'USA' },
   //   { name: 'xuxu', age: 19, address: 'China' },
@@ -20,18 +20,17 @@ export class UserService {
 
   getUsers(): Observable<User[]> {
     console.log("userservice.getUsers() this.url = " + this.url);
-    return this.http.get<User[]>(this.url + "/users");
+    return this.http.get<User[]>(this.url + "/user")
+    .pipe(tap(() => console.log("UserService.getUsers()")));
   }
 
-  test(): Observable<String> {
-    return this.http
-      .get<String>(this.url + "/test")
-      .pipe(tap(() => console.log("UserService.test()")));
-  }
+  // test(): Observable<String> {
+  //   return this.http
+  //     .get<String>(this.url + "/test")
+  //     .pipe(tap(() => console.log("UserService.test()")));
+  // }
 
   addUser(user: User): Observable<User> {
-    console.log("userservice.addUser() this.url = " + this.url);
-
     return this.http
       .post<User>(this.url + "/user", user)
       .pipe(tap(() => console.log("UserService.addUser()")));

@@ -1,0 +1,70 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+
+      <button mat-raised-button color="primary">New Exam</button>
+      <mat-divider [vertical]="true"></mat-divider>
+      <button mat-raised-button color="primary" (click)='submit()'>
+        Submit
+      </button>
+
+    <!-- <input matInput type="text" readonly [(ngModel)]="messageService">
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+      </button> -->
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<mat-card class='message-board'>
+    <app-messages></app-messages>
+</mat-card>
+
+<!-- <mat-form-field class="search-form">
+    <input matInput placeholder="Search Picture" type="text">
+  </mat-form-field>
+  <button button="submit" mat-raised-button color="primary">Search</button>
+  <br> -->
+
+<!-- <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <mat-card class="card-picture" *ngFor="let picture of pictures">
+      <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+        <span fxFlex="80%">{{picture.title}}</span>
+        <mat-icon fxFlex="10%">mode_edit</mat-icon>
+        <mat-icon fxFlex="10%">delete</mat-icon>
+      </mat-card-title>
+      <img mat-card-image [src]="picture.img">
+    </mat-card>
+  </div> -->
+
+<div
+  class="container"
+  fxLayout="row wrap"
+  fxLayout.xs="column"
+  fxLayoutWrap
+  fxLayoutGap="0.5%"
+  fxLayoutAlign="center"
+>
+  <!-- <mat-radio-group class="radio-group" [(ngModel)]="question.userAnswer">
+    <mat-radio-button class="radio-button" *ngFor="let option of question.options" [value]="option.id">
+      {{option.id}}.{{option.text}}
+    </mat-radio-button> -->
+
+  <app-question *ngFor="let q of exam.questions; let i = index" [index]="i" [question]="q"></app-question>
+  <!-- <app-question></app-question>
+    <app-question></app-question>
+    <app-question></app-question>
+    <app-question></app-question> -->
+
+  <!-- <div fxFlex="20%">
+      <app-question></app-question>
+  </div>
+  <div fxFlex="20%">
+    <app-question></app-question>
+  </div>
+  <div fxFlex="20%">
+    <app-question></app-question>
+  </div>
+  <div fxFlex="20%">
+    <app-question></app-question>
+  </div> -->
+</div>

@@ -1,0 +1,15 @@
+<mat-card class="card-question">
+  <mat-card-title>
+    <span>{{ question.word.vocalbulary.english }} </span>
+    <!-- <mat-icon fxFlex="10%">mode_edit</mat-icon>
+    <mat-icon fxFlex="10%">delete</mat-icon> -->
+  </mat-card-title>
+  <mat-card-content>
+    <mat-radio-group class="radio-group" [(ngModel)]="question.userAnswer" (change)='onSelectOption()'>
+      <mat-radio-button class="radio-button" *ngFor="let option of question.options" [value]="option.id">
+        {{option.id}}.{{option.text}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </mat-card-content>
+  <!-- <img mat-card-image [src]="picture.img" /> -->
+</mat-card>

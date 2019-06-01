@@ -41,9 +41,9 @@ app.get("/", function(req, res) {
   res.send("Hello world!");
 });
 
-app.get("/users", function(req, res) {
+app.get("/user*", function(req, res) {
   console.log("user.find()");
-  user.find((err, result) => {
+  userModel.find((err, result) => {
     // console.log(result.toString());
     res.json(result);
   });

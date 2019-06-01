@@ -8,16 +8,18 @@ import { JavascriptPracticeComponent } from './javascript-practice/javascript-pr
 import { ExpressjsComponent } from './expressjs/expressjs.component';
 import { MaterialComponent } from './material/material.component';
 import { UserComponent } from './user/user.component';
+import { ExamComponent } from './exam/exam.component';
 
 const routes: Routes = [
-  { path: './', redirectTo: '/user', pathMatch: 'full' },
+  { path: './', redirectTo: '/exam', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'heroes', component: HeroesComponent },
   { path: 'jspractice', component: JavascriptPracticeComponent },
   { path: 'expressjs', component: ExpressjsComponent },
   { path: 'material', component: MaterialComponent },
-  { path: 'user', component: UserComponent}
+  { path: 'user', component: UserComponent},
+  { path: 'exam', component: ExamComponent}
 ];
 
 @NgModule({

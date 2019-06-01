@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 
+
 // import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryDataService } from './in-memory-data.service';
 
@@ -27,6 +28,18 @@ import { ExpressjsComponent } from './expressjs/expressjs.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialComponent } from './material/material.component';
 import { UserComponent } from './user/user.component';
+import { ExamComponent } from './exam/exam.component';
+import { QuestionComponent } from './question/question.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDialogModule} from '@angular/material/dialog';
+import { MatTableModule} from '@angular/material/table';
+
+import { ExamResultDialogComponent } from './exam/exam-result-dialog/exam-result-dialog.component';
+
 
 @NgModule({
   imports: [
@@ -42,6 +55,14 @@ import { UserComponent } from './user/user.component';
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
+    FlexLayoutModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatDividerModule,
+    MatRadioModule,
+    MatDialogModule,
+    MatTableModule,
+
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
@@ -62,7 +83,13 @@ import { UserComponent } from './user/user.component';
     JavascriptPracticeComponent,
     ExpressjsComponent,
     MaterialComponent,
-    UserComponent
+    UserComponent,
+    ExamComponent,
+    QuestionComponent,
+    ExamResultDialogComponent
+  ],
+  entryComponents: [
+    ExamResultDialogComponent
   ],
   bootstrap: [AppComponent]
 })

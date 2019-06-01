@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { UserService } from "../service/user.service";
+import { UserService } from "./user.service";
 // import { MatListModule } from '@angular/material/list';
-import { User } from "../entity/user";
+import { User } from "./user";
 import {
   FormBuilder,
   FormGroup,
@@ -16,7 +16,7 @@ import {
 })
 export class UserComponent implements OnInit {
   users: User[];
-  test: String;
+  // test: String;
   addUserForm: FormGroup = this.formBuilder.group({
     username: ["", Validators.required],
     age: ["", [Validators.min(18), Validators.max(25)]],
@@ -32,9 +32,9 @@ export class UserComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.userService.test().subscribe(test => {
-      this.test = test;
-    });
+    // this.userService.test().subscribe(test => {
+    //   this.test = test;
+    // });
 
     this.userService.getUsers().subscribe(users => {
       this.users = users;
